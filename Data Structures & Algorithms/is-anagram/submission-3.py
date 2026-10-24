@@ -1,0 +1,29 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if (len(s) != len(t)):
+            return False
+        else:
+            list1 = [0 for i in range(26)]
+
+            for i in s:
+                list1[ord(i)-97] += 1
+
+            for i in t:
+                list1[ord(i)-97] -= 1
+            
+            for num in list1:
+                if num != 0:
+                    return False
+
+            #list1 = [0 for i in range(26)]
+            #list2 = [0 for i in range(26)]
+
+            #for i in s:
+            #    list1[ord(i)-97]+= 1
+            #for i in t:
+            #    list2[ord(i)-97]+= 1
+
+            #if (list1 != list2):
+            #    return False;
+        
+        return True
